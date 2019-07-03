@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html  >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+
+    <title>Budan ~spa~mind~</title>
+    <!-- Scripts -->
+     <!-- Fonts-->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <!-- Styles
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+
+</head>
+<body>
+<script type="text/javascript">
+    window.loading_screen = window.pleaseWait({
+        logo: "/images/budan.png",
+        backgroundColor: '#ffffff',
+        loadingHtml: 'Add html here'
+    });
+
+</script>
+
+<div id="app" >
+    <!--   <nav class="navbar fix-top navbar-expand-md navbar-light bg-white shadow-sm">
+           <div class="container">
+               <a class="navbar-brand" href="{{ url('/') }}">
+                   Budan ~spa~mind~
+               </a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                   <ul class="navbar-nav mr-auto">
+<img src="" width="150px" />
+                       </ul>
+
+
+                   <ul class="navbar-nav ml-auto">
+                       <a href="{{ url('about') }}"><li class="nav-item nav-tabs nav">MOJA PRICA</li></a>
+                       <a href="{{ url('price-sa-kauca') }}"> <li  class="nav-item">Price klijenata - Iskustva</li></a>
+                       <a href="{{ url('posts') }}"><li  class="nav-item">Objave</li></a>
+                       <a href="{{ url('primenjenost') }}"><li  class="nav-item">Primenjene oblasti</li></a>
+                       <a href="{{ url('kontact') }}"><li  class="nav-item">Kontakt podaci</li></a>
+                       @auth
+                           <a href="{{ url('logout') }}"><li  class="nav-item">Odjavi se</li></a>
+                       @endauth
+
+                   </ul>
+               </div>
+           </div>
+       </nav> -->
+
+
+
+
+
+
+    <div class="container" style="max-width: 100%;" id="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="brand-centered">
+                    <a class="navbar-brand" href="{{ url('/') }}" alt="Budan by Marija Dakic">
+
+                        <img src="images/budan.PNG" height="100px" />
+                        <br />
+
+
+
+                    </a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="/">MOJA PRICA</a></li>
+                        <li><a href="#">KONTAKT</a></li>
+                        <li><a href="#">USLUGE</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ url('price') }}">PRICE SA KAUCA</a></li>
+                        <li><a href="{{ url('blog') }}">BLOG</a></li>
+                        <li><a href="{{ url('edukacije') }}">EDUKACIJE</a></li>
+
+                    </ul>
+                </div>
+                <div class="brand-centered" style="padding-top:80px">
+          phpp
+
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </div>
+    <main id="gradient" >
+        @yield('content')
+        @yield('main')
+    </main>
+</div>
+</body>
+</html>
+<style>
+    #gradient{
+        background: linear-gradient(to right, #6ee5b5 0%, #eaf779 100%);
+    }
+    .brand-centered {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    #app{
+        /*
+            background: #290c3d;
+            background: -moz-linear-gradient(45deg, #290c3d 0%, #eaf276 26%, #e4ea6b 64%, #3d2342 84%, #006d52 100%);
+            background: -webkit-linear-gradient(45deg, #290c3d 0%,#eaf276 26%,#e4ea6b 64%,#3d2342 84%,#006d52 100%);
+            background: linear-gradient(45deg, #290c3d 0%,#eaf276 26%,#e4ea6b 64%,#3d2342 84%,#006d52 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#290c3d', endColorstr='#006d52',GradientType=1 );*/
+        /* backgorund: rgba(63, 43, 81, 0.55);
+         background: linear-gradient(to right, rgba(238, 239, 146, 0.75) 10%, rgba(238, 239, 146, 0.55) 100%);
+         opacity: 1;
+           background-image: url('https://clarksvillenow.sagacom.com/wp-content/blogs.dir/43/files/2014/04/yoga.jpg');
+      filter: alpha(opacity=20); */
+    }
+    #header{
+
+        min-height: 120px;
+        z-index:1;
+
+
+    }
+
+    nav{
+        opacity: 1;
+    }
+
+
+    /*demo styling only*/
+    .navbar-brand {
+        padding: 0px; /* remove bootstrap padding on floated image containers -  */
+    }
+    .navbar-brand>img {
+        height: 100px;
+        width: auto;
+        padding-top: 7px; /* padding for image ... text needs no padding */
+    }
+
+
+    .navbar-toggle {
+        z-index: 1;
+    }
+    .container{
+        max-width:800px;
+    }
+    .btn-primary a {
+        color: #fff;
+        font-family: "Candara Light";
+    }
+
+
+
+    path,
+    line {
+        fill: none;
+        stroke: #2a3745;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+
+    /* give the vectors a dashed stroke */
+    .stroke-I {
+        stroke-dasharray: 80;
+        animation: write1 2s 1 ease-out;
+    }
+
+    .stroke-an {
+        stroke-dasharray: 360;
+        animation-delay: 1s;
+        animation: write2 2s  ease-out;
+    }
+
+    .stroke-flourish {
+        animation-delay: 1.5s;
+        stroke-dasharray: 40;
+        animation: write3 2s   ease-out;
+    }
+
+    /*  keyframes */
+    @keyframes write1 {
+        0% {
+            stroke-dashoffset: 80;
+        }
+        20% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes write2 {
+        0%, 25%  {
+
+            stroke-dashoffset: 360;
+        }
+        90% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes write3 {
+        0%, 90% {
+            stroke-dashoffset: 80;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+
+</style>
